@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found · Edge AI Campus Assistant</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/design-system.css">
+</head>
+<body>
+  <main class="container" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-block: var(--space-700);">
+    <article class="panel-card" style="max-width: 560px; width: 100%; align-items: flex-start;">
+      <span class="badge caption-3 font-mono">404</span>
+      <h1 class="heading-3">This page could not be found</h1>
+      <p class="body-3 text-secondary">The link may have moved or the route does not exist on this offline campus server. Return to the dataset workspace to upload course files or inspect your knowledge base.</p>
+      <a href="/" class="btn btn-primary button-md">Return to dataset portal</a>
+    </article>
+  </main>
+  <script>
+    const savedTheme = localStorage.getItem('campus_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Python environments & caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Local binary ChromaDB vector store (auto-rebuilt from data/dataset_store.json on startup)
+data/chroma_db/
+
+# OS & editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

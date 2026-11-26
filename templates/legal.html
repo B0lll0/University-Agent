@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page_kind == 'privacy' %}Privacy policy{% else %}Terms of local use{% endif %} · Edge AI Campus Assistant</title>
+  <meta name="description" content="Local data governance and offline usage terms for the Edge AI Campus Assistant dataset portal.">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/design-system.css">
+</head>
+<body>
+  <main class="container" style="padding-block: var(--space-800); max-width: 760px;">
+    <article class="panel-card" style="gap: var(--space-300);">
+      <div class="action-row">
+        <a href="/" class="btn btn-secondary button-sm">Back to portal</a>
+      </div>
+      {% if page_kind == 'privacy' %}
+      <h1 class="heading-3">Privacy policy</h1>
+      <p class="body-3 text-secondary">This application runs completely locally on your workstation or campus Raspberry Pi hardware. Uploaded course files, faculty guides, extracted chunks, and student test queries stay on local disk inside the project data folder.</p>
+      <h2 class="heading-5">Zero external cloud calls</h2>
+      <p class="body-3 text-secondary">Document parsing, text chunking, Q&amp;A extraction, and local retrieval never send student records or faculty documents to external AI APIs. Optional Ollama and ChromaDB connections communicate exclusively with localhost on your edge device.</p>
+      <h2 class="heading-5">Data retention and removal</h2>
+      <p class="body-3 text-secondary">Faculty administrators can edit individual records or clear the entire dataset workspace at any time from the portal controls, which immediately removes the stored JSON file from disk.</p>
+      {% else %}
+      <h1 class="heading-3">Terms of local use</h1>
+      <p class="body-3 text-secondary">This portal is provided for university faculty staff and student onboarding teams preparing offline knowledge bases for the Edge AI Campus Assistant kiosk project.</p>
+      <h2 class="heading-5">Content accuracy</h2>
+      <p class="body-3 text-secondary">Administrators should review extracted chunks and Q&amp;A pairs before deploying the exported ChromaDB bundle to campus kiosks so official bylaws, schedules, and admission requirements remain accurate.</p>
+      <h2 class="heading-5">Permitted deployment</h2>
+      <p class="body-3 text-secondary">The software and exported JSON, JSONL, and CSV datasets may be replicated across Raspberry Pi kiosks and ESP32 S3 companion nodes within your campus network.</p>
+      {% endif %}
+    </article>
+  </main>
+  <script>
+    const savedTheme = localStorage.getItem('campus_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</body>
+</html>
